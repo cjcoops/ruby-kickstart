@@ -13,6 +13,8 @@
 
 
 def grade(num_books, has_read_books)
+  grades_not_read = ["D", "C", "B"]
+  grades_read = ["C", "B", "A"]
+  score = num_books < 10 ? 0 : num_books < 21 ? 1 : 2
+  has_read_books ? grades_read[score] : grades_not_read[score]
 end
-
-
