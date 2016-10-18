@@ -7,4 +7,10 @@
 
 def odds_and_evens(string, return_odds)
 
+  if return_odds
+    string.split("").select.each_with_index{|char,index| index.odd?}.join
+  else
+    string.split("").select.each_with_index{|char,index| index.even?}.join
+  end
+
 end
