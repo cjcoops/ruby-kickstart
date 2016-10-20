@@ -25,6 +25,19 @@
 
 def deaf_grandma
 
+
+  response = gets.chomp
+
+  until response == "BYE" do
+    if response == response.upcase && (response.empty? == false)
+      puts "NO, NOT SINCE 1938!"
+    else
+      puts "HUH?! SPEAK UP, SONNY!"
+    end
+
+    response = gets.chomp
+
+  end
 end
 
 
