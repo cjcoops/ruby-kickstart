@@ -8,6 +8,17 @@
 # staircase 4  # => {1 => [], 3 => [2]}
 # staircase 5  # => {1 => [], 3 => [2], 5 =>[2, 4]}
 
+def staircase n
 
+  odds = (1..n).select{|i| i.odd?}
+  evens = (1..n).select{|i| i.even?}
 
+  hash = {}
 
+  odds.each do |x|
+    hash[x] = evens.select{|i| i<x}
+  end
+
+  hash
+
+end
