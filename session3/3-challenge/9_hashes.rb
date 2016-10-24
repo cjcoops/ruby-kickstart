@@ -29,3 +29,20 @@
 # shared [1,2,3], [3,2,1]            # => [{1=>[true, true], 2=>[true, true], 3=>[true, true]}, [1, 2, 3]]
 
 
+def shared (a, b)
+  hash = {}
+
+  a.each do |element|
+    hash[element] ||= [nil,nil]
+    hash[element][0] = true
+  end
+
+  b.each do |element|
+    hash[element] ||= [nil, nil]
+    hash[element][1] = true
+  end
+
+  common = hash.select{|key,value| value == [true,true]}.map{|key,value| key}
+
+  [hash, common]
+end
