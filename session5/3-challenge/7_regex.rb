@@ -1,4 +1,4 @@
-# If you struggle on this question for ~30 minutes and aren't getting anywhere, look at the solution, try to understand the code, then close the file, come back here, and try again to solve it. 
+# If you struggle on this question for ~30 minutes and aren't getting anywhere, look at the solution, try to understand the code, then close the file, come back here, and try again to solve it.
 
 # You are writing software for the Green Thumb Nursery. They sent you their inventory
 # in a text document, but you need to extract the data in order to use it. You start to
@@ -33,8 +33,15 @@
 #   return: [["American Redbud Tree", "1 to 2 feet", "$5.95"],
 #            ["Autumn Flowering Cherry", "2 to 4 feet", "$8.95"]]
 #
+def tree_parser string
+  types = string.scan(/^[\w\s]+/)
+  lengths = string.scan(/\d\sto\s\d\sfeet/)
+  costs = string.scan(/\$\d+.\d\d/)
 
+  output = []
+  0.upto(types.length - 1) do |i|
+    output[i] = [types[i],lengths[i],costs[i]]
+  end
 
-
-
-
+  output
+end
